@@ -66,7 +66,7 @@ is produced for output.
 > and amenable for end-to-end training. In addition, in case of repetitive features, assigning the match
 > to the first nearset neighbour might result in an incorrect match.
 
-### Neighbourhood consensus network
+### 3.2 Neighbourhood consensus network
 
 Determining the correct matches from the correlation map is a significant challenge.
 Note that the number of correct matches are of order of *hw*, while the size of the correlation map
@@ -74,3 +74,10 @@ is of the order of (*hw*)<sup>2</sup>. This means that the great majority of the
 the correlation map `corresponds to matching noise` due to incorrectly matched features.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_3.png" width=700>
+
+> we can expect correct matches to have a coherent set of supporting matches surrounding them in the 4-D space.
+> These geometric patterns are equivariant with translations in the input images; that is, if the images are
+> translated, the matching pattern is also translated in the 4-D space by an equal amount. This property motivates
+> to use 4-D convolutions.
+
+By processing 4D convolutional network, we establish a strong locally prior on the relationships between matches.
