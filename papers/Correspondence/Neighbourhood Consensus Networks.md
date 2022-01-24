@@ -37,4 +37,11 @@ The information from this unique match can then be propagated to the neighbourin
 
 We design a model which learns to `discriminate a reliable match` by recognizing patterns of supporting
 matches in its neighbourhood. Furthermore, We do this in a fully differentiable way, such that
-this trainable matching module can be 
+this trainable matching module can be directly combined with strong CNN image descriptors.
+
+There are five main components.
+* dense feature extraction and matching
+* the neighbourhood consensus network
+* a soft mutual nearest neighbour filtering
+* extraction of corresspondences from the output 4D filtered match tensor
+* weakly supervised training loss
