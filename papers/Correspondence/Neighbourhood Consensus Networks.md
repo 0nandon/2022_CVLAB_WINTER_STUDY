@@ -90,4 +90,4 @@ that it will produce the same matches regardless of whether an image pair is inp
 (*I*<sup>A</sup>, *I*<sup>B</sup>) or (*I*<sup>B</sup>, *I*<sup>A</sup>), we propose to apply the network twice
 in the following way.
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_4.png" width=500>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_4.png" width=300>
