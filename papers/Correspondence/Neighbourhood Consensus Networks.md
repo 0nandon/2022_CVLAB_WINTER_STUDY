@@ -100,3 +100,6 @@ with inconsistent local patterns are `downweighted or removed.`
 Although, the proposed neighbourhood consensus network can suppress and amplify matches based on the
 supporting evidence in their neighbourhoods, it cannot enforce global constraints on matches,
 such as `reciprocal match, where matched features are required to be mutual nearest neighbours.`
+
+We propose a softer version of the mutual nearest neighbour filtering, both in the sense of
+`softer decision` and `better differentiability properties.`
