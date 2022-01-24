@@ -53,4 +53,9 @@ There are five main components.
 In order to produce an end-to-end trainable model, we follow the common practice of using
 a deep convolutional neural network (CNN) as a dense feature extraction.
 
-This convolutional network produce 2 feature extractions for each pair of images, called *f*<sup>A</sup>, *f*<sup>B</sup>.
+This convolutional network produce 2 feature extractions which is called *f*<sup>A</sup>, *f*<sup>B</sup>
+for each pair of images.
+
+> While classic hand-crafted neighbourhood consensus approaches are applied after a hard assignment
+> of matches is done, this is `not well suited for developing a matching method that is differentiable`
+> and amenable for end-to-end training.
