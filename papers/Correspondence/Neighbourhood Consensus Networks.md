@@ -91,3 +91,12 @@ that it will produce the same matches regardless of whether an image pair is inp
 in the following way.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_4.png" width=300>
+
+This final output constitutes the *filtered matches c* using the neighbourhood consensus network, where matches
+with inconsistent local patterns are `downweighted or removed.`
+
+### 3.3 Soft mutual nearest neighbour filtering
+
+Although, the proposed neighbourhood consensus network can suppress and amplify matches based on the
+supporting evidence in their neighbourhoods, it cannot enforce global constraints on matches,
+such as `reciprocal match, where matched features are required to be mutual nearest neighbours.`
