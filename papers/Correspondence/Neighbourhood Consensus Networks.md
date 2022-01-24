@@ -36,7 +36,7 @@ The information from this unique match can then be propagated to the neighbourin
 ## Proposed approach
 
 We design a model which learns to `discriminate a reliable match` by recognizing patterns of supporting
-matches in its neighbourhood. Furthermore, We do this in a fully differentiable way, such that
+matches in its neighbourhood. Furthermore, We do this in a `fully differentiable way`, such that
 this trainable matching module can be directly combined with strong CNN image descriptors.
 
 There are five main components.
