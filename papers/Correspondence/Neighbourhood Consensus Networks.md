@@ -56,6 +56,12 @@ a deep convolutional neural network (CNN) as a dense feature extraction.
 This convolutional network produce 2 feature extractions which is called *f*<sup>A</sup>, *f*<sup>B</sup>
 for each pair of images.
 
+And then, all pairwise feature matches need to be computed and stored. The correlation map c<sup>h * w * h * w</sup>
+is produced for output.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_2.png" width=500>
+
 > While classic hand-crafted neighbourhood consensus approaches are applied after a hard assignment
 > of matches is done, this is `not well suited for developing a matching method that is differentiable`
-> and amenable for end-to-end training.
+> and amenable for end-to-end training. In addition, in case of repetitive features, assigning the match
+> to the first nearset neighbour might result in an incorrect match.
