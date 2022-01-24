@@ -39,7 +39,7 @@ We design a model which learns to `discriminate a reliable match` by recognizing
 matches in its neighbourhood. Furthermore, We do this in a `fully differentiable way`, such that
 this trainable matching module can be directly combined with strong CNN image descriptors.
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_1.png" width=1000>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_1.png" width=900>
 
 There are five main components.
 * dense feature extraction and matching
@@ -59,7 +59,7 @@ for each pair of images.
 And then, all pairwise feature matches need to be computed and stored. The correlation map c<sup>h * w * h * w</sup>
 is produced for output.
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_2.png" width=500>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_2.png" width=300>
 
 > While classic hand-crafted neighbourhood consensus approaches are applied after a hard assignment
 > of matches is done, this is `not well suited for developing a matching method that is differentiable`
