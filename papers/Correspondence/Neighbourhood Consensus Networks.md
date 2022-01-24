@@ -50,3 +50,7 @@ There are five main components.
 
 ### 3.1 Dense feature extraction and matching
 
+In order to produce an end-to-end trainable model, we follow the common practice of using
+a deep convolutional neural network (CNN) as a dense feature extraction.
+
+This convolutional network produce 2 feature extractions for each pair of images, called *f*<sup>A</sup>, *f*<sup>B</sup>.
