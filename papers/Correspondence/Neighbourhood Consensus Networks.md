@@ -23,7 +23,7 @@ both category and instance level matching.`
 While we have now better local patch descriptors, the matching is still performed by variants of the nearest
 neighbour assignment in a feature space followed by separate disambiguation stages based on geometric constaints.
 
-However, this approach has fundamental limitaiton that cannot distinguish r`epetitive patterns or textureless
+However, this approach has fundamental limitaiton that cannot distinguish `repetitive patterns or textureless
 regions.`
 
 In this work, we take a different directino and develope a trainable neural network architecture that disambiguates
@@ -31,3 +31,10 @@ such challenging situations `by analyzing local neighbourhood patterns` in a ful
 
 The intuition is following : in order to disambiguate a match on a repetitive pattern, it is necessary
 to `analyze a larger context of the scene that contains a unique non-repetitive feature.`
+The information from this unique match can then be propagated to the neighbouring uncertain matches.
+
+## Proposed approach
+
+We design a model which learns to `discriminate a reliable match` by recognizing patterns of supporting
+matches in its neighbourhood. Furthermore, We do this in a fully differentiable way, such that
+this trainable matching module can be 
