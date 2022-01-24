@@ -65,3 +65,12 @@ is produced for output.
 > of matches is done, this is `not well suited for developing a matching method that is differentiable`
 > and amenable for end-to-end training. In addition, in case of repetitive features, assigning the match
 > to the first nearset neighbour might result in an incorrect match.
+
+### Neighbourhood consensus network
+
+Determining the correct matches from the correlation map is a significant challenge.
+Note that the number of correct matches are of order of *hw*, while the size of the correlation map
+is of the order of (*hw*)<sup>2</sup>. This means that the great majority of the information in
+the correlation map `corresponds to matching noise` due to incorrectly matched features.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_3.png" width=500>
