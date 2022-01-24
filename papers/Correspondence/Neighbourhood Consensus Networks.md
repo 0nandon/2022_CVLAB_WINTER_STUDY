@@ -73,4 +73,4 @@ Note that the number of correct matches are of order of *hw*, while the size of 
 is of the order of (*hw*)<sup>2</sup>. This means that the great majority of the information in
 the correlation map `corresponds to matching noise` due to incorrectly matched features.
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_3.png" width=500>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_3.png" width=700>
