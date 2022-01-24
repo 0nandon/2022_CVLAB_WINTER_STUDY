@@ -35,6 +35,11 @@ The intuition is following : in order to disambiguate a match on a repetitive pa
 to `analyze a larger context of the scene that contains a unique non-repetitive feature.`
 The information from this unique match can then be propagated to the neighbouring uncertain matches.
 
+This powerful idea is typically known as `neighbourhood consensus` or more broadly as `semi-local constraints`.
+
+In this work, we go one step further and propose a way of `learning neighbourhood consensus constraints directly`
+from training data.
+
 ## Proposed approach
 
 We design a model which learns to `discriminate a reliable match` by recognizing patterns of supporting
