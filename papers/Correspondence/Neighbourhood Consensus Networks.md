@@ -83,4 +83,7 @@ the correlation map `corresponds to matching noise` due to incorrectly matched f
 By processing 4D convolutional network, we establish a `strong locally prior on the relationships between matches.`
 The aim is that these layers capture more complex patterns by combining the outputs from the previous layer.
 
-
+Finally, in order to produce a method that is invariant to the particular order of the input images, that is,
+that it will produce the same matches regardless of whether an image pair is input to the net as
+(*I*<sup>A</sup>, *I*<sup>B</sup>) or (*I*<sup>B</sup>, *I*<sup>A</sup>), we propose to apply the network twice
+in the following way.
