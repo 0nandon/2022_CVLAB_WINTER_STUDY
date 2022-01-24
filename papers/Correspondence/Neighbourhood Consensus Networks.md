@@ -2,6 +2,8 @@
 
 [paper link here](http://papers.neurips.cc/paper/7437-neighbourhood-consensus-networks.pdf)
 
+[video](https://www.youtube.com/watch?v=sRBviaVN4GE)
+
 ## Abstract
 
 We address the problem of finding `reliable dense correspondence` between a pair of images.
