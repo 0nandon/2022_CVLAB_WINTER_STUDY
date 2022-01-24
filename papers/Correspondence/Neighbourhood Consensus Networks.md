@@ -26,7 +26,7 @@ neighbour assignment in a feature space followed by separate disambiguation stag
 However, this approach has fundamental limitaiton that cannot distinguish `repetitive patterns or textureless
 regions.`
 
-In this work, we take a different directino and develope a trainable neural network architecture that disambiguates
+In this work, we take a different direction and develope a trainable neural network architecture that disambiguates
 such challenging situations `by analyzing local neighbourhood patterns` in a full set of dense corresspondences.
 
 The intuition is following : in order to disambiguate a match on a repetitive pattern, it is necessary
