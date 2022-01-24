@@ -39,9 +39,14 @@ We design a model which learns to `discriminate a reliable match` by recognizing
 matches in its neighbourhood. Furthermore, We do this in a `fully differentiable way`, such that
 this trainable matching module can be directly combined with strong CNN image descriptors.
 
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/correspondence_3_1.png" width=1000>
+
 There are five main components.
 * dense feature extraction and matching
 * the neighbourhood consensus network
 * a soft mutual nearest neighbour filtering
 * extraction of corresspondences from the output 4D filtered match tensor
 * weakly supervised training loss
+
+### 3.1 Dense feature extraction and matching
+
