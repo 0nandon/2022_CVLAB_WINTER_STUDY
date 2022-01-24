@@ -80,4 +80,7 @@ the correlation map `corresponds to matching noise` due to incorrectly matched f
 > translated, the matching pattern is also translated in the 4-D space by an equal amount. This property motivates
 > to use 4-D convolutions.
 
-By processing 4D convolutional network, we establish a strong locally prior on the relationships between matches.
+By processing 4D convolutional network, we establish a `strong locally prior on the relationships between matches.`
+The aim is that these layers capture more complex patterns by combining the outputs from the previous layer.
+
+
