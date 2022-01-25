@@ -22,3 +22,12 @@ all `in the absence of any paired training examples.`
 Because obtaining paired training data can be difficult and expensive,
 we therefore seek an algorithm that can learn to translate between domains
 `without paired input-output examples.`
+
+We therefore seek an algorithm that can learn to translate between domains
+`without paired input-output examples.` 
+
+We may train mapping *G : X = Y* such that the output *y<sup>~</sup> = G(x), x ∈ X* is indistinguishable
+from images *y ∈ Y* by an adversary trained to classify *y<sup>~</sup>* apart from *y*.
+
+However, such a translation does not gurantee that `the individual inputs and outputs *x* and *y* are paired up
+in a meaningful way` - there are infinitely many mappings *G* that will induce the same distribution over *y<sup>~</sup>*.
