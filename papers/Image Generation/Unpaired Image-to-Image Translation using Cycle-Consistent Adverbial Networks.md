@@ -43,4 +43,4 @@ the mapping *G* and *F* simultaneously, and adding a *cycle consistent loss*.
 
 ## Formulation
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_2.png" width=700>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_2.png" width=900>
