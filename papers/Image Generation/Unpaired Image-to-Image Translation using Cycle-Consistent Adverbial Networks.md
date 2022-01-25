@@ -41,3 +41,6 @@ Matematically, if we have a translator *G : X = Y* and another translator *F : Y
 *G* and *F* should be inverses of each other. We apply this structural assumption by training both
 the mapping *G* and *F* simultaneously, and adding a *cycle consistent loss*.
 
+## Formulation
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_2.png" width=700>
