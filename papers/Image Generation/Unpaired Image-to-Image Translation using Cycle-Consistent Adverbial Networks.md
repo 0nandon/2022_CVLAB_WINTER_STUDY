@@ -31,3 +31,7 @@ from images *y ∈ Y* by an adversary trained to classify *y<sup>~</sup>* apart 
 
 However, such a translation does not gurantee that `the individual inputs and outputs *x* and *y* are paired up
 in a meaningful way` - there are infinitely many mappings *G* that will induce the same distribution over *y<sup>~</sup>*.
+
+> In practice, we have found it difficult to optimize the adversial objective in isolation: standard procedures often lead
+> to the well-known problem ofmode collapse.
+
