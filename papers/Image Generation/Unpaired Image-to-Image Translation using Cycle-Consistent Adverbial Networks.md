@@ -29,13 +29,13 @@ We therefore seek an algorithm that can learn to translate between domains
 We may train mapping *G : X = Y* such that the output *y<sup>~</sup> = G(x), x ∈ X* is indistinguishable
 from images *y ∈ Y* by an adversary trained to classify *y<sup>~</sup>* apart from *y*.
 
-However, such a translation does not gurantee that `the individual inputs and outputs *x* and *y* are paired up
-in a meaningful way` - there are infinitely many mappings *G* that will induce the same distribution over *y<sup>~</sup>*.
+However, such a translation does not guarantee that the individual inputs and outputs *x* and *y* are paired up
+in a meaningful way - there are infinitely many mappings *G* that will induce the same distribution over *y<sup>~</sup>*.
 
 > In practice, we have found it difficult to optimize the adversial objective in isolation: standard procedures often lead
 > to the well-known problem of mode collapse.
 
-Therefore, we exploit the property that translation should be 'cycle consistent'.
+Therefore, we exploit the property that translation should be `'cycle consistent'.`
 
 Matematically, if we have a translator *G : X = Y* and another translator *F : Y = X*, then
 *G* and *F* should be inverses of each other. We apply this structural assumption by training both
