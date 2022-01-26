@@ -70,3 +70,6 @@ the ones produced by the latest generative images.
 
 > Figure 12 has completely failed, because our model was trained in the wild horse, zebra synsets of ImageNet,
 > which does not contain images of a person riding horse or zebra.
+
+* We also observe a lingering gap between the results achievable with paired training data and those achieved
+* by our unpaired method.
