@@ -50,3 +50,11 @@ We apply our method to a wide range of applications below.
 ## Formulation
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_2.png" width=900>
+
+## Imlementation
+
+We apply two techniques from recent works to stabilize our model training procedure.
+
+* L<sub>GAN</sub>, we replace the negative log likelihood objective by a least square loss.
+* To reduce model oscillation, we update the discrimators using a history of generated images rather than
+the ones produced by th elatest generative images.
