@@ -59,6 +59,8 @@ We apply two techniques from recent works to stabilize our model training proced
 * To reduce model oscillation, we update the discrimators using a history of generated images rather than
 the ones produced by the latest generative images.
 
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_5.png" width=500>
+
 ## Results
 
 We study the importance of both the adversarial loss and the cycle consistent loss,
