@@ -67,3 +67,6 @@ the ones produced by the latest generative images.
 * Some failure cases are caused by the distribution characteristic of the training datasets.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_3.png" width=500>
+
+> Figure 12 has completely failed, because our model was trained in the wild horse, zebra synsets of ImageNet,
+> which does not contain images of a person riding horse or zebra.
