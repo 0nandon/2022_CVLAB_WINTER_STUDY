@@ -59,7 +59,21 @@ We apply two techniques from recent works to stabilize our model training proced
 * To reduce model oscillation, we update the discrimators using a history of generated images rather than
 the ones produced by the latest generative images.
 
-##
+## Results
+
+We study the importance of both the adversarial loss and the cycle consistent loss,
+and compare our full method agaist several variants.
+
+We compare our method against several baselines below.
+* CoCAN
+* Pixel loss + GAN
+* Feature loss + GAN
+* BiGAN/ALI
+* pix2pix
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_4.png" width=500>
+
+
 
 ## Limitations and Discussion
 
