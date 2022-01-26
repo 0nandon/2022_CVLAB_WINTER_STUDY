@@ -57,4 +57,13 @@ We apply two techniques from recent works to stabilize our model training proced
 
 * L<sub>GAN</sub>, we replace the negative log likelihood objective by a least square loss.
 * To reduce model oscillation, we update the discrimators using a history of generated images rather than
-the ones produced by th elatest generative images.
+the ones produced by the latest generative images.
+
+##
+
+## Limitations and Discussion
+
+* Some failures occur in extreme transformations such as geometric changes.
+* Some failure cases are caused by the distribution characteristic of the training datasets.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/Imagegeneration_3_3.png" width=500>
