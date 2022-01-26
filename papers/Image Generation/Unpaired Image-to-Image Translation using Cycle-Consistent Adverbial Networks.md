@@ -86,4 +86,4 @@ We compare our method against several baselines below.
 > which does not contain images of a person riding horse or zebra.
 
 * We also observe a lingering gap between the results achievable with paired training data and those achieved
-* by our unpaired method.
+by our unpaired method.
