@@ -30,6 +30,6 @@ To render this neural radiance field (NeRF) from a particular viewpoint, we:
 output set of colors and densities
 * use classical volume rendering techniques to accumulate those colors and densities into a 2D image.
 
-> Because thos precess is naturally differentiable, we can use gradient descent to optimize this model.
+> Because this precess is naturally differentiable, we can use gradient descent to optimize this model.
 
 
