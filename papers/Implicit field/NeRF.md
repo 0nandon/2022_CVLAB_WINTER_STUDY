@@ -70,6 +70,6 @@ Instead using deterministic quadratue, we use a stratified sampling approach whe
 [*t*<sub>n</sub>, *t*<sub>f</sub>] into *N* evenly-spaced bins and then `draw one sample uniformly at
 random from within each bin`:
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_4.png" width=600>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_4.png" width=400>
 
 
