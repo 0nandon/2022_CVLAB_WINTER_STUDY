@@ -98,7 +98,7 @@ for mapping inputs to a higher dimensional space.
 > to map continuous input coordinates into a `higher dimensional space` to enable our MLP to more easily
 > approximate a higher frequency function.
 
-### 6.2 Hierarchical volume sampling
+### 5.2 Hierarchical volume sampling
 
 Our rendering strategy of densely evaluating the neural radiance field network at N query points
 along each camera ray is inefficient : `free space` and `occluded regions` that `do not contribute to the rendered
