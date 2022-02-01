@@ -93,3 +93,9 @@ We reformulated *F*<sub>θ</sub> as a composition of two functions *F*<sub>θ</s
 for mapping inputs to a higher dimensional space.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_6.png" width=600>
+
+> A similar mapping is used in the popular Transformer architecture. In contrast, we use these functions
+> to map continuous input coordinates into a `higher dimensional space` to enable our MLP to more easily
+> approximate a higher frequency function.
+
+
