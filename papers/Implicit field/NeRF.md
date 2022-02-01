@@ -66,7 +66,7 @@ infinitesimal particle at location **X**.
 The function T(*t*) denotes the `accumulated transmittance` along the ray from *t*<sub>n</sub> to *t*,
 the `probability` that the ray travels from *t*<sub>n</sub> to *t* without hitting any other particle.
 
-Instead using deterministic quadratue, we use a stratified sampling approach where we partition
+Instead using deterministic quadrature, we use a stratified sampling approach where we partition
 [*t*<sub>n</sub>, *t*<sub>f</sub>] into *N* evenly-spaced bins and then `draw one sample uniformly at
 random from within each bin`:
 
