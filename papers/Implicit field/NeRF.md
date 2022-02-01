@@ -123,6 +123,6 @@ coarse network and *N*<sub>c</sub> + *N*<sub>f</sub> samples from the fine netwo
 
 We then use volume rendering procedure, to render the color of each ray from both sets of sampels.
 
-Our loss is simply the total squared error between the rendered and true pixel colors of both the coarse and fine renderings.
+Our loss is simply the `total squared error` between the rendered and true pixel colors of both the coarse and fine renderings.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_8.png" width=600>
