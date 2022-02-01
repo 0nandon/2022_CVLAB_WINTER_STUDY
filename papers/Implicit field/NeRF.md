@@ -98,4 +98,19 @@ for mapping inputs to a higher dimensional space.
 > to map continuous input coordinates into a `higher dimensional space` to enable our MLP to more easily
 > approximate a higher frequency function.
 
+### 6.2 Hierarchical volume sampling
 
+Our rendering strategy of densely evaluating the neural radiance field network at N query points
+along each camera ray is inefficient : `free space` and `occluded regions` that `do not contribute to the rendered
+image are still sampled repeatedly.`
+
+Instead of just using a single network to represent the scene, we simultaneously optimize two networks:
+* coarse network
+* fine network
+
+We first sample a set of *N*<sub>c</sub> locations using stratified sampling, and evaluate the coarse network at
+these locations as described in previous section. Given the output of this coarse entwork,
+we then produce a more `informed sampling of points along each ray` where samples are biased towards the relevant
+parts of the volume.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_7.png" width=600>
