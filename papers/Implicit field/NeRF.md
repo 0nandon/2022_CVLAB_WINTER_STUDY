@@ -62,3 +62,14 @@ The volume density σ(x) can be interpreted as the `differential probability of 
 infinitesimal particle at location **X**.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_3.png" width=600>
+
+The function T(*t*) denotes the `accumulated transmittance` along the ray from *t*<sub>n</sub> to *t*,
+the `probability` that the ray travels from *t*<sub>n</sub> to *t* without hitting any other particle.
+
+Instead using deterministic quadratue, we use a stratified sampling approach where we partition
+[*t*<sub>n</sub>, *t*<sub>f</sub>] into *N* evenly-spaced bins and then `draw one sample uniformly at
+random from within each bin`:
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_4.png" width=600>
+
+
