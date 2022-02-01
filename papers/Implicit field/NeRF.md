@@ -74,4 +74,4 @@ random from within each bin`:
 
 We use these samples to estimate *C*(r) with the quadrature rule discussed in the volume rendering review by Max:
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_5.png" width=500>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_5.png" width=700>
