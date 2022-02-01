@@ -92,4 +92,4 @@ that `perform pooly at representing high-frequency variation in color and geomet
 We reformulated *F*<sub>θ</sub> as a composition of two functions *F*<sub>θ</sub> = *F*<sup>'</sup><sub>θ</sub> ○ γ
 for mapping inputs to a higher dimensional space.
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_6.png" width=500>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_6.png" width=600>
