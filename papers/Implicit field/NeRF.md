@@ -39,5 +39,11 @@ In summary, our technical contributions are:
 parameterized as basic MLP networks.
 * A differentiable rendering precedure based on `classical volume rendering techniques`, which we use to optimize these
 representations from standard RGB images.
+* A `positional encoding` to map each input 5D coordinate into a `higher dimensional space`, which enables us to succesfully
+optimize neural radiance fields to represent high-frequency scene content
 
+## Neural Radiance Field Scene Representation
+We represent a continuous scene as a 5D vector-valued function wohse input is a 3D location **X** = (*x*, *y*, *z*)
+and 2D viewing direction (θ, Φ), and whose output is an emitted color *c* = (*r*, *g*, *b*) and volume density σ.
 
+> *F*<sub>θ</sub> : (**X**, d) -> (*c*, σ)
