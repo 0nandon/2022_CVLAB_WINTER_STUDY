@@ -47,3 +47,5 @@ We represent a continuous scene as a 5D vector-valued function wohse input is a 
 and 2D viewing direction (θ, Φ), and whose output is an emitted color *c* = (*r*, *g*, *b*) and volume density σ.
 
 > *F*<sub>θ</sub> : (**X**, d) -> (*c*, σ)
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_2.png" width=600>
