@@ -75,3 +75,21 @@ random from within each bin`:
 We use these samples to estimate *C*(r) with the quadrature rule discussed in the volume rendering review by Max:
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_5.png" width=700>
+
+## Optimizing a Neural Radiance Field
+
+We observe that components we descried in previous section, are not sufficient for achieving the SOTA quality.
+
+We introduce two improvements to enable representing high-resolution comlex scenes.
+* positional encoding of the input coordinates that assists the MLP in representing high-frequency functions.
+* hierarchical sampling precedure that allows us to efficiently sample this high-frequency representation.
+
+### 5.1 Positional encoding
+
+We found that having the network *F*<sub>θ</sub> directly operate on *xyzθΦ* input coordinates results in renderings
+that `perform pooly at representing high-frequency variation in color and geometry.`
+
+We reformulated *F*<sub>θ</sub> as a composition of two functions *F*<sub>θ</sub> = *F*<sup>'</sup><sub>θ</sub> ○ γ
+for mapping inputs to a higher dimensional space.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_6.png" width=500>
