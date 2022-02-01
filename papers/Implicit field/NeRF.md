@@ -114,3 +114,15 @@ we then produce a more `informed sampling of points along each ray` where sample
 parts of the volume.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_7.png" width=600>
+
+### 5.3 Implementation details
+
+At each optimization iteration, we randomly rample a batch of camera rays from the set of all pixels in the dataset,
+and then follow the hierarchical sampling described in previous section to query *N*<sub>c</sub> samples from the
+coarse network and *N*<sub>c</sub> + *N*<sub>f</sub> samples from the fine network.
+
+We then use volume rendering procedure, to render the color of each ray from both sets of sampels.
+
+Our loss is simply the total squared error between the rendered and true pixel colors of both the coarse and fine renderings.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_8.png" width=600>
