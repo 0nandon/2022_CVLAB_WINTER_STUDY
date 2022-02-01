@@ -126,3 +126,24 @@ We then use volume rendering procedure, to render the color of each ray from bot
 Our loss is simply the `total squared error` between the rendered and true pixel colors of both the coarse and fine renderings.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_8.png" width=600>
+
+## Results
+
+We thoroughly outperforms prior work below.
+* NV (Neural Volumes)
+* SRN (Scene Representaion Networks)
+* LLFF (Local Light Field Fusion)
+
+## Conclusion
+
+We demonstrate that representing scenes as 5D neural radiance fields produces better renderings than the previously-dominant
+approach of training deep convolutional networks to output discretized voxel representations.
+
+Although we have proposed a hierarchical sampling strategy to make rendering more sample-efficient, there is `still much more
+progress` to be made in investigating techniques to efficiently optimize and render neural radiance fields.
+
+Another direction for future work is interpretability:
+sampled representations such as voxel grids and meshes admit reasoning about the expected quality of rendered views and failure modes,
+but it is unclear how to analyze these issues `when we encode scenes in the weights of a deep neural network.`
+
+
