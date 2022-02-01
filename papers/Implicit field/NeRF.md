@@ -49,3 +49,16 @@ and 2D viewing direction (θ, Φ), and whose output is an emitted color *c* = (*
 > *F*<sub>θ</sub> : (**X**, d) -> (*c*, σ)
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_2.png" width=600>
+
+We encourage the representation to be multiview consistent by `restricting the network` to predict the volume density σ
+as a function of `only the location x`, while allowing the RGB color *c* to be `predicted as a function of both location
+and viewing direction`.
+
+## Volume Rendering with Radiance Fields
+
+We render the color of any ray passing through the scene using principles from classical volume rendering.
+
+The volume density σ(x) can be interpreted as the `differential probability of a ray terminating` at an
+infinitesimal particle at location **X**.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/nerf_3.png" width=600>
