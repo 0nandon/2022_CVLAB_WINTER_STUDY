@@ -1,0 +1,38 @@
+
+# LoFTR : Detector-Free Local Feature Matching with Transformers
+
+[paper link here](https://arxiv.org/pdf/2104.00680.pdf)
+
+## Abstract
+
+We present a novel method for local image feature matching.
+Instead of performing `image feature dectection, description, and matching sequentially`, we propose to first
+establish `pixel-wise dense matches` at a coarse level and `later refine` the good matches at a fine level.
+
+We use `self and cross attention layers in Transformer` to obtain feature descriptors that are conditioned on both images.
+
+> The global receptive fields provided by Transforemr enables our method to produce dense matches in `low-texture areas`,
+> where feature detectors usually struggle to preduce `repeatable interest points.`
+
+## Introduction
+
+Given two images to be matched, most existing matching methods consist of three seperate phase:
+* feature detection
+* feature description
+* feature matching
+
+In the detection phase, salient points like corners are first detected as interest points from each image.
+Local desriptors are then extracted around neighborhod regions of these interest points.
+
+The use of a feature detector reduces the search space of matching, and the resulted sparse correspondences are sufficient
+for most tasks.
+
+However, a feature detector may `fail to extract enough interset points` that are repeatable between images due to
+various factors `such as poor texture, repetitive patterns, viewpoint change, illumination variation, and motion blur.`
+
+Several recent works have attempted to remedy this problem by establishing pixel-wise dense matches.
+
+However, the dense features extracted by CNN in these works have `limited receptive field` which `may not distinguish indistinctive regions.`
+
+Instead, humans find correspondences in these indistinctive regions not only based on the local neighborhood,
+but with a `larger global context.`
