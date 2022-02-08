@@ -38,4 +38,15 @@ This framework minimizes the following loss:
 
 ### 3.1 Dense Visual Alignment
 
+GANgearing begins by training a latent variable generative model *G* on an unaligned input dataset.
 
+With G trained, we are `free to draw samples` from the unaligned distribution by computing *x* = *G*(W)
+for randomly sampled w ~ W, where W denotes the distribution over latents.
+
+Now, consider a fixed latent vector c ∈ R<sup>512</sup>. This vector corresponds to a fixed synthetic image
+*G*(c) from the original unaligned distribution.
+
+We learn a Spatial Transformer *T* that is trained to wrap every random unaligned image *x* = *G*(w) to the
+same target image *y* = *G*(c). Therefore, we can optimize the following loss:
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_3.png" width=400>
