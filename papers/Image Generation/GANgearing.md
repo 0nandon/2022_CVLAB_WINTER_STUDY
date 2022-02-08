@@ -63,7 +63,7 @@ This give rise to the GANgearing loss function:
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_4.png" width=400>
 
-#### Spatial Trnasformer Parameerization
+#### Spatial Trnasformer Parameterization
 
 We must choose how to constrain the *g* regressed by Spatial Transformer T.
 
