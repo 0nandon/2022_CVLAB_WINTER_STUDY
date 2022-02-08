@@ -106,3 +106,10 @@ To encourage each **c**<sub>k</sub> and *T*<sub>k</sub> pair to specialize in a 
 a hard-assignment step to assign unaligned synthetic images to modes.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_8.png" width=300>
+
+## Limitations and Discussion
+
+One limitation with GANgealing is that we can only `realiably propagate correspondences that are visible in our learned target mode.`
+
+A potential solution to this problem is to initialize the learned mode with a user-chosen image via `GAN inversion` that covers all
+points of interest.
