@@ -62,3 +62,15 @@ the object in the target image is roughly identical across targets.
 This give rise to the GANgearing loss function:
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_4.png" width=400>
+
+#### Spatial Trnasformer Parameerization
+
+We must choose how to constrain the *g* regressed by Spatial Transformer T.
+
+Our final T is a composition of the `similarity Spatial Transformer` into the `unconstrained Spatial Transformer`,
+which we found worked best.
+
+When using the unconstrained *T*, it can be beneficial to add a total variation regularizer that encourages the predicted
+flow to be smooth to mitigate degenerate solutions:
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_5.png" width=500>
