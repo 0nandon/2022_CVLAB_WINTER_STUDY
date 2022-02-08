@@ -96,6 +96,13 @@ diverse poses that cannot be represented well by a single mode in the data.
 To handle this situation, GANgealing can be adapted into a clustering algorithm by simply learning more
 than one target latent **c**.
 
-Let *K* refers to the number of **c** vectorws we wish to learn.
+Let *K* refers to the number of **c** vectors we wish to learn.
 Since each **c** captures a specific mode in the data, learning multiple {**c**<sub>k</sub>}<sup>*K*</sup><sub>k=1</sub>
 would enable us to learn multiple modes.
+
+We will now have *K* Spatial Transformers, one for each mode being learned.
+
+To encourage each **c**<sub>k</sub> and *T*<sub>k</sub> pair to specialize in a particular mode, we include
+a hard-assignment step to assign unaligned synthetic images to modes.
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_8.png" width=300>
