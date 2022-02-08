@@ -113,9 +113,10 @@ However, a problem arises in that we cannot `compute this cluster algorithm for 
 step requires computing L<sub>align</sub>, which itself `requires knowledge of the input image's corresponding to **w** vector.`
 
 > The most obvious solution to this problem is to perform GAN inversion on input real images *x* to obtain a latent vector **w**
-> such that *G*(**w**) ≈ *x*
+> such that *G*(**w**) ≈ *x*. However, accurate GAN inversion for non-face datasets remains somewhat challenging and slow, despite
+> recent progress.
 
-we opt to train aclassifier that directly predicts the cluster assignment of an input image.
+we opt to train a classifier that directly predicts the cluster assignment of an input image.
 
 We train the classifier using a standard cross-entropy loss on pairs (*G*(**w**), *k*<sup>*</sup>), where *k*<sup>*</sup> is obtained using the above assigment step.
 
