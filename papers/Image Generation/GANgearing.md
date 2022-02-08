@@ -56,6 +56,7 @@ apperance and pose variation`, it is not reasonable to expect every unaligned sa
 
 Instead of using the same target *G*(c) for every randomly sampled image *G*(w), we mix c, w:
 > mix(c, w) ∈ R<sup>512</sup>
+
 to construct a per-sample target that retains appearance of *G*(w) but where the pose ane orientation of
 the object in the target image is roughly identical across targets.
 
