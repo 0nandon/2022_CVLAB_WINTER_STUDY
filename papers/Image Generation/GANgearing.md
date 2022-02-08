@@ -27,7 +27,7 @@ The Key is in `employing the latent space of a GAN` to automatically generate pa
 
 In this section, we present GAN-Supervised Learning.
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_2.png" width=600>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_2.png" width=700>
 
 Under this framework, (*x, y*) pairs are sampled from a pretrained GAN generator, where *x* is a `random sample
 from the GAN` and *y* is the `sample obtained by applying a learned latent manipulation` to *x*'s latent code.
