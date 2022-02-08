@@ -81,4 +81,4 @@ In practice, we do not backpropagate gradients directly into c.
 
 Instead, we parameterize c as a linear combination of the top-*N* principal directions of W space:
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_6.png" width=300>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_6.png" width=200>
