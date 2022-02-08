@@ -87,3 +87,15 @@ Instead, we parameterize c as a linear combination of the top-*N* principal dire
 Our final GANgealing objective is given by:
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_7.png" width=400>
+
+### 3.2 Joint Alignment and Clustering
+
+Although GANgearing can handle highly-multimodal data, some datasets such as LSUN Horses, feature extremely
+diverse poses that cannot be represented well by a single mode in the data.
+
+To handle this situation, GANgealing can be adapted into a clustering algorithm by simply learning more
+than one target latent **c**.
+
+Let *K* refers to the number of **c** vectorws we wish to learn.
+Since each **c** captures a specific mode in the data, learning multiple {**c**<sub>k</sub>}<sup>*K*</sup><sub>k=1</sub>
+would enable us to learn multiple modes.
