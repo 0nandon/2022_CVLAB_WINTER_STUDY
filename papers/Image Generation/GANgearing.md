@@ -107,6 +107,20 @@ a hard-assignment step to assign unaligned synthetic images to modes.
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_8.png" width=300>
 
+> Note that the *K* = 1 case is equivalent to the previously described unimodal case.
+
+However, a problem arises in that we cannot `compute this cluster algorithm for input real images` - the assignment
+step requires computing L<sub>align</sub>, which itself `requires knowledge of the input image's corresponding to **w** vector.`
+
+> The most obvious solution to this problem is to perform GAN inversion on input real images *x* to obtain a latent vector **w**
+> such that *G*(**w**) ≈ *x*
+
+we opt to train aclassifier that directly predicts the cluster assignment of an input image.
+
+We train the classifier using a standard cross-entropy loss on pairs (*G*(**w**), *k*<sup>*</sup>), where *k*<sup>*</sup> is obtained using the above assigment step.
+
+As with the Spatial Transformer, the classifier generalizes well to real images despite being trained exclusively on fake samples.
+
 ## Limitations and Discussion
 
 One limitation with GANgealing is that we can only `realiably propagate correspondences that are visible in our learned target mode.`
