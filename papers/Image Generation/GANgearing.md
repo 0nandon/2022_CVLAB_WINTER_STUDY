@@ -50,3 +50,15 @@ We learn a Spatial Transformer *T* that is trained to wrap every random unaligne
 same target image *y* = *G*(c). Therefore, we can optimize the following loss:
 
 <img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_3.png" width=300>
+
+This simple approach is reasonable for datasets with `limited diversity`; however, `in the presence of significant
+apperance and pose variation`, it is not reasonable to expect every unaligned sample.
+
+Instead of using the same target *G*(c) for every randomly sampled image *G*(w), we mix c, w:
+> mix(c, w) ∈ R<sup>512</sup>
+to construct a per-sample target that retains appearance of *G*(w) but where the pose ane orientation of
+the object in the target image is roughly identical across targets.
+
+This give rise to the GANgearing loss function:
+
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_4.png" width=500>
