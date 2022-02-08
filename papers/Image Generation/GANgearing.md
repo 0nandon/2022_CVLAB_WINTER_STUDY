@@ -49,4 +49,4 @@ Now, consider a fixed latent vector c ∈ R<sup>512</sup>. This vector correspon
 We learn a Spatial Transformer *T* that is trained to wrap every random unaligned image *x* = *G*(w) to the
 same target image *y* = *G*(c). Therefore, we can optimize the following loss:
 
-<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_3.png" width=400>
+<img src="https://github.com/0nandon/2022_CVLAB_WINTER_STUDY/blob/main/photo/GANgearing_3.png" width=300>
