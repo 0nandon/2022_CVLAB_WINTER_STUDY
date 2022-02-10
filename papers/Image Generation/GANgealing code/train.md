@@ -49,7 +49,7 @@ if __name__ = '__main__':
 	t_ema = get_stn(...)
 	l1 = DirectionInterpolator(...)
 
-	# accumulate 함수의 decay 인자에 0을 넣어줘서, t_ema오 stn의 파라미터가 동일하게 한다.
+	# accumulate 함수의 decay 인자에 0을 넣어줘서, t_ema와 stn의 파라미터 값이 동일하게 한다.
 	accumulate(t_ema, stn, 0)
 
 	# optimizer 지정
