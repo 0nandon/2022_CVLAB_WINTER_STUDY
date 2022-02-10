@@ -72,9 +72,8 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
 
 다음은 `train` 함수에 대한 설명이다.
  
-먼저, GAN에 들어갈 노이즈 이미지(latent code)를 생성한다.
- 
-또한, args에 입력된 GAN이 생성하는 이미지의 해상도와, STN이 학습하는 flow field의 해상도를 비교하여, 적절한 다운샘플러를 지정해준다.
+* GAN에 들어갈 노이즈 이미지(latent code)를 생성한다.
+* args에 입력된 GAN이 생성하는 이미지의 해상도와, STN이 학습하는 flow field의 해상도를 비교하여, 적절한 다운샘플러를 지정해준다.
 
  ```python
  def train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sched, loss_fn,
@@ -104,7 +103,7 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
 	    resize_fake2stn = BilinearDownsampler(args.gen_size // args.flow_size, 3).to(device) if args.gen_size > args.flow_size else nn.Sequential()
  ```
  
- 학습을 할 때는 pretrained된 GAN을 사용하기 때문에, require_grads를 freeze해준다.
+ 학습을 할 때는 pretrained된 GAN을 사용하기 때문에, requires_grad를 freeze해준다.
  
 ```python
 	generator.eval()
