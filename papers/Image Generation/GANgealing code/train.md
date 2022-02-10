@@ -148,13 +148,57 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
 			break
 ```
 
+본결적을 학습을 수행한다.
+* GANgearling 논문에서 언급했듯, loss는 perceptual loss, tv loss, flow identity loss를 모두 합해서 계산한다.
+* t_ema에 stn 파라미터를 모멘텀 형식으로 더한다.
 
+```python
+		# Train STN and LL #
+
+		if args.clustering or args.flips:
+			perceptual_loss, delta_flow = gangealing_cluster_loss(...)
+		else:
+			perceptual_loss, delta_flow = gangealing_loss(...)
+
+		tv_loss = total_variation_loss(delta_flow) if args.tv_weight > 0 else zero
+		flow_idty_loss = flow_identity_loss(delta_flow) if args.flow_identity_weight > 0 else zero
+
+		loss_dict = {'p': perceptual_loss, 'tv': tv_loss, 'f': flow_idty_loss}
+
+
+		stn.zero_grad()
+		l1.zero_grad()
+
+		# loss를 모두 더해준다.
+		full_stn_loss = perceptual_loss + tv_loss + flow_idty_loss
+		full_stn_loss.backward()
+		t_optim.step()
+
+		if not args.freeze_l1:
+			l1_optim.step()
+		if psi_is_fixed:
+			epoch = max(0, (i - args.anneal_psi) / args.period)
+
+		# 학습된 stn 모듈을 t_ema에 모멘텀 기법을 활용하여 더해준다.
+		# accum인자는 모멘텀 정도를 지정한다.
+		accumulate(t_ema, t_module, accum)
+
+		# Aggregate loss information across GPUs
+		loss_reduced = reduce_loss_dict(loss_dict)
+
+		...
+```
 
 또한 마지막으로, 모든 모델의 상태를 저장하는 함수 `save_state_dict()`를 선언해준다.
 
 ```python
 def save_state_dict(ckpt_name, generator, t_module, t_ema, t_optim, t_sched, l1_module, l1_optim, l1_sched, args):
 	ckpt_dict = {
+		"g_ema": generator.state_dict(), "t": t_module.state_dict(),
+		"t_ema": t_sched.state_dict(), "t_optim": t_optim.state_dict(),
+		"t_sched": t_sched.state_dict(), "l1": l1_module.state_dict(),
+		"l1_optim": l1_optim.state_dict(), "l1_sched": l1_sched.state_dict(),
+		"args": args
 	}
 	torch.save(ckpt_dict, f'{results_path}/checkpoints/{ckpt_name}.pt')
 ```
