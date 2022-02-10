@@ -2,6 +2,23 @@
 
 [code link here]()
 
+tv loss를 계산하는 함수이다.
+
+```python
+def total_variation_loss():
+  # flow should be size (N, H, W, 2)
+  reduce_dims = (0, 1, 2, 3) if reduce_batch else (1, 2, 3)
+  
+  # Huber loss ㄱ
+  distance_fn = lambda a : torch.where(a <= 1.0, 0.5 * a.pow(2), a-0.5).mean(dim=reduce_dim)
+  assert delta_flow.size(-1) == 2
+  
+  diff_y = distance_fn((delta_flow[:, :-1, :, :] - delta_flow[:, 1:, :, :]).abs)
+  diff_x = distance_fn()
+  loss = diff_y + diss_x
+  return loss
+```
+
 
 latent code와 fixed c를 GAN에 넣어 GANgealing을 수행하고, perceptual loss를 계산하는 함수이다.
 
