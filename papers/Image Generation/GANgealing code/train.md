@@ -133,7 +133,7 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
 이제 지정된 iteration에 따라 반복학습을 수행한다.
 
 ```python
-# main training loop
+	# main training loop
 	for idx in pbar:
 		i = idx + args.start_iter + 1
 		if i <= args.anneal_psi:
