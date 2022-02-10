@@ -150,6 +150,13 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
 
 
 
+또한 마지막으로, 모든 모델의 상태를 저장하는 함수 `save_state_dict()`를 선언해준다.
 
+```python
+def save_state_dict(ckpt_name, generator, t_module, t_ema, t_optim, t_sched, l1_module, l1_optim, l1_sched, args):
+	ckpt_dict = {
+	}
+	torch.save(ckpt_dict, f'{results_path}/checkpoints/{ckpt_name}.pt')
+```
 
 
