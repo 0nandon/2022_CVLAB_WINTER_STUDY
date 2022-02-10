@@ -101,7 +101,7 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
 
 	# 만약 GAN이 생성한 이미지의 resolition이 STN이 학습하는 flow field의 resolution보다 작으면 다운샘플러 지정.
 	# 아니면 기본적인 nn.Sequential로 지정
- 	resize_fake2stn = BilinaerDownsampler(args.gen_size // args.flow_size, 3).to(device) if args.gen_size > args.flow_size else nn.Sequential()
+	resize_fake2stn = BilinaerDownsampler(args.gen_size // args.flow_size, 3).to(device) if args.gen_size > args.flow_size else nn.Sequential()
  ```
  
  학습을 할 때는 pretrained된 GAN을 사용하기 때문에, require_grads를 freeze해준다.
