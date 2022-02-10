@@ -80,8 +80,8 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
  def train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sched, loss_fn,
 	anneal_fn, device, writer):
 		
-	# If using real data, select some fixed samples used to visualize training:
-	...
+	    # If using real data, select some fixed samples used to visualize training:
+	    ...
 
 
 	# Progress bar for monitoring training
