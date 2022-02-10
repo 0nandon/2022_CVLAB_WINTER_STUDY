@@ -130,9 +130,22 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
 	...
 ```
 
-이제 지정되 iteration에 따라 반복학습을 수행한다.
+이제 지정된 iteration에 따라 반복학습을 수행한다.
 
 ```python
+# main training loop
+	for idx in pbar:
+		i = idx + args.start_iter + 1
+		if i <= args.anneal_psi:
+			psi = anneal_fn(i, 1.0, 0.0, args.anneal_psi).item()
+			psi_is_fixed = False
+		else:
+			psi = 0.0
+			psi_is_fixed = True
+
+		if i > args.iter:
+			print('Done!')
+			break
 ```
 
 
