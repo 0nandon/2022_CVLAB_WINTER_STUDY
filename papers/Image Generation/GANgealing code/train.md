@@ -70,37 +70,70 @@ if __name__ = '__main__':
 train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sched, loss_fn, anneal_fn, device, writer)
 ```
 
- 다음은 `train` 함수에 대한 설명이다.
+다음은 `train` 함수에 대한 설명이다.
  
+먼저, GAN에 들어갈 노이즈 이미지(latent code)를 생성한다.
+ 
+또한, args에 입력된 GAN이 생성하는 이미지의 해상도와, STN이 학습하는 flow field의 해상도를 비교하여, 적절한 다운샘플러를 지정해준다.
+
  ```python
  def train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sched, loss_fn,
 	anneal_fn, device, writer):
 		
-		# If using real data, select some fixed samples used to visualize training:
-		...
+	# If using real data, select some fixed samples used to visualize training:
+	...
 
 
-		# Progress bar for monitoring training
-		pbar = range(args.iter)
-		if primary():
-			pbar = tqdm(pbar, initial=args.start_iter, dynamic_ncols=True, smoothing=0.2)
+	# Progress bar for monitoring training
+	pbar = range(args.iter)
+	if primary():
+		pbar = tqdm(pbar, initial=args.start_iter, dynamic_ncols=True, smoothing=0.2)
 
 
-		# Recold modules to make saving checkpoints easier:
-		...
+	# Recold modules to make saving checkpoints easier:
+	...
 
 
-		# GAN에 들어가는 latent codes
-		sample_z = torch.randn(args.n_sample // args.num_heads, args.dim_latent, device=device)
-		if args.clustering:
-			big_sample_z = torch.randn(args.n_mean // get_word_size(), args.dim_latent, device=device)
+	# GAN에 들어가는 latent codes
+	sample_z = torch.randn(args.n_sample // args.num_heads, args.dim_latent, device=device)
+	if args.clustering:
+		big_sample_z = torch.randn(args.n_mean // get_word_size(), args.dim_latent, device=device)
 
-		# 만약 GAN이 생성한 이미지의 resolition이 STN이 학습하는 flow field의 resolution보다 작으면 다운샘플러 지정.
-		# 아니면 기본적인 nn.Sequential로 지정
- 		resize_fake2stn = BilinaerDownsampler(args.gen_size // args.flow_size, 3).to(device) if args.gen_size > args.flow_size else nn.Sequential()
+	# 만약 GAN이 생성한 이미지의 resolition이 STN이 학습하는 flow field의 resolution보다 작으면 다운샘플러 지정.
+	# 아니면 기본적인 nn.Sequential로 지정
+ 	resize_fake2stn = BilinaerDownsampler(args.gen_size // args.flow_size, 3).to(device) if args.gen_size > args.flow_size else nn.Sequential()
  ```
+ 
+ 학습을 할 때는 pretrained된 GAN을 사용하기 때문에, require_grads를 freeze해준다.
+ 
+ ```python
+ 	generator.eval()
+	requires_grad(generator, False) # GAN is frozen througout this entire process
+	requires_grad(stn, True)
+	requires_grad(l1, True)
+ ```
+ 
+ 학습에 필요한 여러 변수들을 초기화시켜준다.
+ 
+ 이외에 learning scheduler에 따른 모델의 저장 체크포인트를 조정해준다.
 
+```python
+	# A model checkpoint will be saved whenever the learning rate is zero
+	...
 
+	# Initialize various training variables and constants
+	zero = torch.tensor(0.0, device='cuda')
+	accum = 0.5 ** (32 / (10 * 1000))
+	psi = 1.0
+
+	# create initial training visualizations
+	...
+```
+
+이제 지정되 iteration에 따라 반복학습을 수행한다.
+
+```python
+```
 
 
 
