@@ -3,6 +3,8 @@
 
 [code link here](https://github.com/0nandon/gangealing/blob/main/train.py)
 
+`base_training_argparse()`로 parser을 불러온다음, 필요한 args를 추출한다.
+
 ```python
 if __name__ = '__main__':
 	device = 'cuda'
@@ -20,4 +22,19 @@ if __name__ = '__main__':
   	# args에 지정된 num_heads의 개수가 1 이상이면 args.clustering에 True로 지정한다.
 	args.clustering = args.num_heads > 1
 	results_path = os.path.join(args.results, args.exp_names)
+```
+
+...
+
+```python
+	if primary():
+		writer = GANgealingWriter(results.path)
+		with open(f'') as f:
+			json.dump(args.__dict__, f, indent=2)
+	else:
+		writer = None
+		
+	# seed RNG
+	torch.manual_seed(args.seed * get_world_size() + get_rank())
+	np.random.seed(args.seed * get_world_size() + get_rank())
 ```
