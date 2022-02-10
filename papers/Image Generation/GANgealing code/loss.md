@@ -23,10 +23,30 @@ def total_variation_loss():
  
  ```python
  def flow_identity_loss(delta_flow):
-  loss = delta_flow.pow(2).mean()
-  return loss
+    loss = delta_flow.pow(2).mean()
+    return loss
  ```
-
+ 
+ GAN에서 target img와 unaligned img를 생성하는 함수이다.
+ 
+```python
+def sample_gan_supervised_pairs():
+  with torch.set_grad_enbaled(not freeze_l1):
+    if z is None:
+      # 잡음 이미지 생성
+      z = torch.randn(batch, dim_latent, device=device)
+    
+    # unaligned img 생성
+    unaligned_in, w_noise = generate([z], noise=None, return_latents=True)
+    
+    # c fixed latent를 만든다.
+    w_aligned = l1([w_noise[:, 0, :]], psi=psi)
+    
+    # target image 생성
+    aligned_target, _ = generator(w_aligned, input_is_latent=True, noise=None)
+    aligned_target = resize_fake2stn(aligned_target)
+  return unaligned_in, aligned_target
+```
 
 latent code와 fixed c를 GAN에 넣어 GANgealing을 수행하고, perceptual loss를 계산하는 함수이다.
 
