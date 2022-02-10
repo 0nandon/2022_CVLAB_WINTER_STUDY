@@ -106,12 +106,12 @@ train(args, loader, generator, stn, t_ema, l1, t_optim, l1_optim, t_sched, l1_sc
  
  학습을 할 때는 pretrained된 GAN을 사용하기 때문에, require_grads를 freeze해준다.
  
- ```python
-        generator.eval()
-	requires_grad(generator, False) # GAN is frozen througout this entire process
+```python
+	generator.eval()
+	requires_grad(generator, False) # GAN is frozen throughout this entire process
 	requires_grad(stn, True)
 	requires_grad(l1, True)
- ```
+```
  
  학습에 필요한 여러 변수들을 초기화시켜준다.
  
