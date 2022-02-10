@@ -6,8 +6,7 @@
 ```python
 if __name__ = '__main__':
 	device = 'cuda'
-  
-  # 인자 불러오기
+	# 인자 불러오기
 	parser = base_training_argparse()
 	args = parser.parse_args()
 
@@ -18,7 +17,7 @@ if __name__ = '__main__':
 	args.n_mean = 200 if args.debug else args.n_mean
 	args.vis_batch_size //= args.num_heads
 
-  # args에 지정된 num_heads의 개수가 1 이상이면 args.clustering에 True로 지정한다.
+  	# args에 지정된 num_heads의 개수가 1 이상이면 args.clustering에 True로 지정한다.
 	args.clustering = args.num_heads > 1
 	results_path = os.path.join(args.results, args.exp_names)
 ```
