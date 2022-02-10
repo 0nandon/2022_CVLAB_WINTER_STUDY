@@ -63,13 +63,6 @@ if __name__ = '__main__':
 	# loss function 지정
 	loss_fn = get_perceptual_loss(args.loss_fn, device)
 	anneal_fn = get_psi_annealing_fn(args.anneal_fn)
-
-        # stn의 파라미터를 t_ema에 모멘텀을 사용하여 더한다.
-	# decay인수에 0을 넣어서 t_ema의 파라미터와 stn의 파라미터가 같게 한다.
-	accumulate(t_ema, stn, 0)
-
-	t_optim = optim.Adam(stn.parameters(), lr=args.stn_lr, ...)
-	l1_optim = optim.Adam(l1.parameters(), lr=args.l1_lr, ...)
 ```
 
 `train` 함수를 사용하여 학습을 진행한다.
