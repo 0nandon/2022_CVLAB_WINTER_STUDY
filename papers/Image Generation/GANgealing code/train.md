@@ -38,3 +38,35 @@ if __name__ = '__main__':
 	torch.manual_seed(args.seed * get_world_size() + get_rank())
 	np.random.seed(args.seed * get_world_size() + get_rank())
 ```
+
+모델을 초기화시켜준다.
+`GAN`, `STN`, optimizer, loss function등을 지정해준다.
+
+```python
+	# Initialize models
+	generator = Generator(...)
+	stn = get_stn(...)
+	t_ema = get_stn(...)
+	l1 = DirectionInterpolator(...)
+
+	# ???
+	accumulate(t_ema, stn, 0)
+
+	# optimizer 지정
+	t_optim = optim.Adam(stn.parameters(), lr=args.stn_lr, ...)
+	l1_optim = optim.Adam(l1.parameters(), lr=args.l1_lr, ...)
+
+	# ???
+	t_sched = DecayingCosineAnnealingWarmRestarts(...)
+	l1_sched = DecayingCosineAnnealingWarmRestarts(...)
+
+	# loss function 지정
+	loss_fn = get_perceptual_loss(args.loss_fn, device)
+	anneal_fn = get_psi_annealing_fn(args.anneal_fn)
+
+	accumulate(t_ema, stn, 0)
+
+	t_optim = optim.Adam(stn.parameters(), lr=args.stn_lr, ...)
+	l1_optim = optim.Adam(l1.parameters(), lr=args.l1_lr, ...)
+```
+
