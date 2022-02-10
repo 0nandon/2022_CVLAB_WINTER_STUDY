@@ -1,6 +1,6 @@
 ## loss.py
 
-[code link here]()
+[code link here](https://github.com/0nandon/gangealing/blob/main/models/losses/loss.py)
 
 tv loss를 계산하는 함수이다.
 
