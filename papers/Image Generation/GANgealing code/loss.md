@@ -65,9 +65,9 @@ def gangealing_loss(
   
   input_img_for_sampling = unaligned_in if sample_from_full_res else None
   
-  # stn에서 unaligned_in를 aligned하게 만든다. 
-  # aligned_pred : warping하 이미지
-  # delta_flow : STN에서 grid generator부분에서 affine transformation의 matrix
+  # stn에서 unaligned 이미지를 aligned하게 만든다. 
+  # aligned_pred : warping한 이미지
+  # delta_flow : STN의 grid generator부분에서 affine transformation의 matrix
   aligned_pred, delta_flow = stn(
     resize_fake2stn(unaligned_in), return_flow=True,
     input_img_for_sampling=input_img_for_sampling, **stn_kwargs
