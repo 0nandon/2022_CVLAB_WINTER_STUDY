@@ -37,7 +37,7 @@ def sample_gan_supervised_pairs():
       z = torch.randn(batch, dim_latent, device=device)
     
     # unaligned img 생성
-    unaligned_in, w_noise = generate([z], noise=None, return_latents=True)
+    unaligned_in, w_noise = generator([z], noise=None, return_latents=True)
     
     # c fixed latent를 만든다.
     w_aligned = l1([w_noise[:, 0, :]], psi=psi)
