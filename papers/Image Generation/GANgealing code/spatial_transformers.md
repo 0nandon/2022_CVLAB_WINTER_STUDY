@@ -111,7 +111,13 @@ def iterated_forward(...):
   ...
   
 def single_forward(...):
-  
+  if input_img.size(-1) > self.stn_in_size:
+    regression_input = self.input_downsample(input_img)
+  else:
+    regression_input = input_img
+    
+  if input_img_for_sampling is not None:
+    
 ```
 
 
