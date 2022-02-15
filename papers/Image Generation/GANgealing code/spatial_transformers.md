@@ -106,6 +106,10 @@ def forward(...):
     return self.iteratd_forward(...)
 ```
 
+실제로 STN을 수행한다.
+
+localisation network를 통해 features를 extract하고, warp class로 warpping을 한다.
+
 ```python
 def iterated_forward(...):
   ...
@@ -117,7 +121,38 @@ def single_forward(...):
     regression_input = input_img
     
   if input_img_for_sampling is not None:
+    source_pixels = input_img_for_sampling
+  else:
+    source_pixels = input_img
     
+  out = self.convs(regression_input)
+  
+  batch, channel, height, width = out.shape
+  out = self.final_conv(out)
+  
+  if not self.is_flow:
+    out = out.view(batch, -1) # batch르 제외한 나머지를 flatten
+    out = self.fianl_linear(out)
+    
+  output_resolution = output_resolution if output_resolution is not None else self.stn_in_size
+  
+  # 실젤 wrapping을 수행한다.
+  out, grid, M, oob = self.wrap_head(...)
+  
+  if pack:
+    return [out, grid, M, oob]
+  else:
+    rtn = [out]
+    if return_warp:
+      rtn.append(grid)
+    if return_flow:
+      rtn.append(M)
+    if return_out_of_bounds:
+      rtn.append(oob)
+    if len(rtn) == 1:
+      rtn = rtn[0]
+      
+    return rtn
 ```
 
 
